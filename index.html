@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wearable Security Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>HealthSecure</h2>
+    </div>
+
+    <ul>
+
+<li onclick="showPage('dashboardPage')">
+Dashboard
+</li>
+
+<li onclick="showPage('devicesPage')">
+Devices
+</li>
+
+<li onclick="showPage('apiPage')">
+API Security
+</li>
+
+<li onclick="showPage('logsPage')">
+Threat Logs
+</li>
+
+<li onclick="showPage('reportsPage')">
+Reports
+</li>
+
+<li onclick="showPage('settingsPage')">
+Settings
+</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+    <header>
+        <div id="dashboardPage" class="page">
+        </div>
+
+        <div id="devicesPage" class="page" style="display:none;">
+
+<h1>Devices</h1>
+
+<div class="card">
+    <h3>FitWatch Pro</h3>
+    <p>Status: Online</p>
+</div>
+
+<div class="card">
+    <h3>Health Band X</h3>
+    <p>Status: Offline</p>
+</div>
+
+</div>
+
+<div id="apiPage" class="page" style="display:none;">
+
+<h1>API Security</h1>
+
+<div class="card">
+JWT Authentication Enabled ✅
+</div>
+
+<div class="card">
+Rate Limiting Active ✅
+</div>
+
+<div class="card">
+Encrypted API Communication ✅
+</div>
+
+</div>
+
+<div id="logsPage" class="page" style="display:none;">
+
+<h1>Threat Logs</h1>
+
+<div class="log danger">
+Unauthorized API Attempt
+</div>
+
+<div class="log warning">
+Rate Limit Triggered
+</div>
+
+</div>
+
+<div id="reportsPage" class="page" style="display:none;">
+
+<h1>Reports</h1>
+
+<div class="card">
+Total Requests: 8450
+</div>
+
+<div class="card">
+Blocked Attacks: 34
+</div>
+
+</div>
+
+<div id="settingsPage" class="page" style="display:none;">
+
+<h1>Settings</h1>
+
+<button>Generate API Key</button>
+
+<button>Backup Database</button>
+
+</div>
+
+        <div class="header-title">
+            <h1>Wearable Health Security Dashboard</h1>
+        </div>
+
+        <div class="header-right">
+            <div class="status-dot"></div>
+            <span>Protected</span>
+        </div>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Heart Rate</h3>
+            <h2 id="heartRate">78 BPM</h2>
+        </div>
+
+        <div class="card">
+            <h3>Body Temp</h3>
+            <h2 id="temperature">36.8°C</h2>
+        </div>
+
+        <div class="card">
+            <h3>Daily Steps</h3>
+            <h2 id="steps">8450</h2>
+        </div>
+
+        <div class="card attack">
+            <h3>Blocked Attacks</h3>
+            <h2 id="attacks">12</h2>
+        </div>
+
+    </section>
+
+    <section class="dashboard-grid">
+
+        <div class="panel">
+
+            <h2>Connected Devices</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Device</th>
+                        <th>API Key</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="deviceTable">
+
+                    <tr>
+                        <td>FitWatch</td>
+                        <td>************</td>
+                        <td class="online">Online</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>Security Event Logs</h2>
+
+            <div id="logs">
+
+                <div class="log success">
+                    Authorized Data Upload
+                </div>
+
+                <div class="log warning">
+                    Invalid API Request Blocked
+                </div>
+
+                <div class="log danger">
+                    Suspicious Device Attempt
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="api-section">
+
+        <div class="panel">
+
+            <h2>API Request Monitor</h2>
+
+            <div class="progress-wrapper">
+
+                <span>Requests Used</span>
+
+                <div class="progress">
+                    <div class="fill" id="apiFill"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
